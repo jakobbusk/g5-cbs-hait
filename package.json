@@ -1,0 +1,23 @@
+{
+  "name": "g5-programmeing-cbs-hait",
+  "version": "1.0.0",
+  "description": "Godkendelses opgave 5 i prog på sem 2",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakobbusk/g5-cbs-hait.git"
+  },
+  "author": "Jakob Sabroe Busk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakobbusk/g5-cbs-hait/issues"
+  },
+  "homepage": "https://github.com/jakobbusk/g5-cbs-hait#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
