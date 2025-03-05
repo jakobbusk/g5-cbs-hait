@@ -22,5 +22,9 @@ const animalDatabase = [
 
 ];
 
+const searchAnimals = (name) => {
+    return animalDatabase.filter(animal => animal.name.toLowerCase().includes(name.toLowerCase()));
+}
+
 export default animalDatabase;
-export { Animal };
+export { Animal, searchAnimals };

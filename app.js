@@ -1,14 +1,27 @@
 import express from 'express'
 const app = express()
 const port = 3000
-import animals, { Animal } from './animalDatabase.js'
+
+import animals, { Animal, searchAnimals } from './animalDatabase.js'
+
+app.use('/static', express.static('public'))
+
+app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  res.json(animals)
+
+    res.render('index', { animals: animals })
 })
 
 app.get('/add-animal', (req, res) => {
     res.send('Add an animal')
+})
+
+app.get('/search', (req, res) => {
+    const name = req.query.name;
+    const searchResults = searchAnimals(name);
+    res.json(searchResults);
+
 })
 
 app.post('/add-animal', (req, res) => {
