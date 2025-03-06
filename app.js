@@ -1,6 +1,7 @@
 import express from 'express'
 const app = express()
 const port = 3000
+import bodyParser from 'body-parser'
 
 import animals, { Animal, searchAnimals } from './animalDatabase.js'
 
@@ -8,14 +9,13 @@ app.use('/static', express.static('public'))
 
 app.set('view engine', 'ejs')
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
 
     res.render('index', { animals: animals })
 })
 
-app.get('/add-animal', (req, res) => {
-    res.send('Add an animal')
-})
 
 app.get('/search', (req, res) => {
     const name = req.query.name;
@@ -25,18 +25,20 @@ app.get('/search', (req, res) => {
 })
 
 app.post('/add-animal', (req, res) => {
+    console.log(req.body);
 
 
     const newAnimal = new Animal(
-        animals.length + 1,
-        req.query.name,
-        req.query.kind,
-        req.query.birthDate,
-        req.query.deathDate
+        req.body.name,
+        req.body.kind,
+        req.body.birthDate,
+        req.body.deathDate
     );
+
     animals.push(newAnimal);
 
-    res.send(newAnimal)
+    // res.json({ body: req.body, newAnimal });
+    res.redirect('/');
 })
 
 app.listen(port, () => {

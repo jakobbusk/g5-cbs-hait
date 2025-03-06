@@ -3,43 +3,43 @@ body {
     background-color: #f9fafb;
     margin: 0;
     padding: 20px;
-  }
+}
 
-  .container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-  }
+}
 
-  .header-content h1 {
+.header-content h1 {
     font-size: 18px;
     font-weight: 600;
     color: #111827;
-  }
+}
 
-  .header-content p {
+.header-content p {
     font-size: 14px;
     color: #374151;
     margin-top: 5px;
-  }
+}
 
-  .header-controls {
+.header-controls {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
+}
 
-  .search-input {
+.search-input {
     width: 200px;
     padding: 8px 12px;
     font-size: 14px;
@@ -48,19 +48,19 @@ body {
     border-radius: 6px;
     outline: none;
     transition: border-color 0.2s ease-in-out;
-  }
+}
 
-  .search-input::placeholder {
+.search-input::placeholder {
     color: #9ca3af;
-  }
+}
 
-  .search-input:focus {
-    border-color: #4f46e5;
-    outline: 2px solid #4f46e5;
-  }
+.search-input:focus {
+    border-color: #5F6D61;
+    outline: 2px solid #5F6D61;
+}
 
-  .add-button {
-    background-color: #4f46e5;
+.add-button {
+    background-color: #5F6D61;
     color: #fff;
     font-size: 14px;
     font-weight: 600;
@@ -69,41 +69,157 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-  }
+}
 
-  .add-button:hover {
-    background-color: #4338ca;
-  }
+.add-button:hover {
+    background-color: #4C574E;
+}
 
-  .table-container {
+.table-container {
     overflow-x: auto;
-  }
+}
 
-  table {
+table {
     width: 100%;
     border-collapse: collapse;
-  }
+}
 
-  th, td {
+th,
+td {
     padding: 12px;
     text-align: left;
     font-size: 14px;
-  }
+}
 
-  th {
+th {
     background-color: #f3f4f6;
     font-weight: 600;
     color: #111827;
-  }
+}
 
-  tbody tr {
+tbody tr {
     border-bottom: 1px solid #e5e7eb;
-  }
+}
 
-  tbody tr:last-child {
+tbody tr:last-child {
     border-bottom: none;
-  }
+}
 
-  td {
+td {
     color: #4b5563;
-  }
+}
+
+
+
+
+/* CSS */
+.modal {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(107, 114, 128, 0.75);
+    transition: opacity 0.3s ease-out;
+}
+
+.modal-container {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-panel {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-icon {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #d1fae5;
+}
+
+.modal-icon-svg {
+    width: 24px;
+    height: 24px;
+    color: #16a34a;
+}
+
+.modal-header {
+    margin-top: 1rem;
+}
+
+.modal-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.modal-body {
+    margin-top: 0.5rem;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.modal-footer {
+    margin-top: 1.5rem;
+}
+
+.modal-button {
+    width: 100%;
+    background-color: #38413A;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.modal-button:hover {
+    background-color: #2e352e;
+}
+
+/* Modal form styling */
+.modal .form-group {
+    margin-bottom: 1rem;
+}
+
+.modal .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}

@@ -1,6 +1,6 @@
 class Animal {
-    constructor(id, name, kind, birthDate, deathDate) {
-        this.id = id;
+    constructor( name, kind, birthDate, deathDate) {
+        this.id = animalDatabase.length + 1;
         this.name = name;
         this.kind = kind;
         this.birthDate = birthDate;
