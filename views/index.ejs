@@ -128,7 +128,6 @@
             });
         }
 
-        // Modal logic: open the modal when "Add animal" button is clicked
         const addAnimalButton = document.querySelector('.add-button');
         const modal = document.querySelector('.modal');
         const cancelButton = document.getElementById('cancel-button');
@@ -136,8 +135,6 @@
         addAnimalButton.addEventListener('click', function () {
             modal.style.display = 'block';
         });
-
-        // Close the modal when clicking the cancel button
         cancelButton.addEventListener('click', function () {
             modal.style.display = 'none';
         });
